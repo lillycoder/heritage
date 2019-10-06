@@ -1,0 +1,25 @@
+
+@import "bootstrap";
+
+.navbar {
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 200;
+  box-shadow: 0px 1px 3px #2a2a2a;
+  background: image_url('diagonal-squares.png');
+}
+
+.navbar-inverse a.navbar-brand {
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 100;
+  color: white;
+}
+.hero {
+  background: image_url('hero.jpg');
+}
+
+.help-block {
+  color: #0B0B0B;
+  background-color: #DE1F4B;
+  border-radius: 3px;
+  padding: 2px 8px 2px 8px;
+}

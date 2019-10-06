@@ -1,0 +1,25 @@
+<hr>
+
+<div class="booyah-box-1 col-10 offset-1">
+  <p class="title">
+    HOA Directory</p>
+  <p class="tiny">
+    (This list only includes registered members)
+  </p>
+  <hr class="style-five">
+  <% @townhouse.each do |townhouse| %>
+  
+    <% if @townhouse.present? %>
+      <p class="dir">
+        <%= townhouse.name %>
+      </p>
+      <p class="dir2"> Address: 
+        <%= townhouse.address %>
+      </p>
+      <p class="dir2">Phone Number:
+        <%= townhouse.primaryphone %>
+      </p>
+    <% end %>
+    <hr class="style-six">
+  <% end %>
+</div>

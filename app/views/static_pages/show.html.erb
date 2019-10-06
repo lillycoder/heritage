@@ -1,0 +1,18 @@
+<h1>Hello this is the directory page</h1>
+
+<% @townhouse.each do |townhouse| %>
+  <div class="booyah-box col-10 offset-1">
+    <% if @townhouse.present? %>
+      <p>The last entry is:</p>
+      <p>House number:
+        <%= townhouse.name %>
+      </p>
+      <p> Street name:
+        <%= townhouse.address %>
+      </p>
+    <% end %>
+    <% if townhouse.user.present? %>
+      <p><%= townhouse.user.email %></p>
+    <% end %>
+  </div>
+<% end %>
