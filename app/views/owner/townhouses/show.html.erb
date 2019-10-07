@@ -8,4 +8,7 @@
         <%= @townhouse.address %>
       </p>
       <p><%= @townhouse.user.email %></p>
+      <%= link_to 'Edit Information', edit_owner_townhouse_path(@townhouse), class: 'btn btn-info' %>
+      <%= link_to 'Finished', townhouses_path, class: 'btn btn-info' %>
   </div>
+ 

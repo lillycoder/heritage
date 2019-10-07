@@ -1,5 +1,5 @@
 class Owner::TownhousesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
     @townhouse = Townhouse.new
@@ -16,6 +16,16 @@ class Owner::TownhousesController < ApplicationController
 
   def show
     @townhouse = Townhouse.find(params[:id])
+  end
+
+  def edit
+    @townhouse = Townhouse.find(params[:id])
+  end
+
+  def update
+    @townhouse = Townhouse.find(params[:id])
+    @townhouse.update_attributes(townhouse_params)
+    redirect_to root_path
   end
 
   private

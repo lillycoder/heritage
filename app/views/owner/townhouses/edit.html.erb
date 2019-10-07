@@ -1,0 +1,21 @@
+<h1>Edit page </h1>
+<br />
+<div class="booyah-box col-10 offset-1">
+  <h1>Registration Form</h1>
+  <p>Please fill out the registration form (one for each household)</p>
+  <br />
+  <%= simple_form_for @townhouse, url: owner_townhouse_path do |f| %>
+    <%= f.input :name, label: 'Please enter the name for the primary head of household' %> 
+    <%= f.input :address, label: 'Please list Number and Street only (i.e. 423 Mill)' %>
+    <%= f.input :primaryphone, label: 'Primary phone number' %>
+    <%= f.input :secondaryphone, label: 'Secondary phone number' %>
+    <%= f.input :primaryemail, label: 'Primary email' %>
+    <%= f.input :secondaryemail, label: 'Secondary email' %>
+    <%= f.input :emergency, label: 'Emergency contact (name and phone number)' %>
+    <%= f.input :comment, label: 'Comments to include anything else you would like to share or additional names for the HOA directory' %>
+    <br />
+    <%= f.submit "Update", class: 'btn btn-info' %>
+    <br />
+  <% end %>
+  <br />
+</div>

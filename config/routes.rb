@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root 'static_pages#index' 
   resources :townhouses, only: [:index, :show] 
   namespace :owner do
-    resources :townhouses, only: [:new, :create, :show]
+    resources :townhouses, only: [:new, :create, :show, :edit, :update]
   end
 end
