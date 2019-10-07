@@ -25,7 +25,7 @@ class Owner::TownhousesController < ApplicationController
   def update
     @townhouse = Townhouse.find(params[:id])
     @townhouse.update_attributes(townhouse_params)
-    redirect_to root_path
+    redirect_to owner_townhouse_path(@townhouse)
   end
 
   private

@@ -7,6 +7,12 @@
       <p> Street name:
         <%= @townhouse.address %>
       </p>
+      <p> Primary Phone: <%= @townhouse.primaryphone %></p>
+      <p> Secondary Phone: <%= @townhouse.secondaryphone %></p>
+      <p> Primary Email: <%= @townhouse.primaryemail %></p>
+      <p> Secondary Email: <%= @townhouse.secondaryemail %></p>
+      <p> Emergency Contact Info: <%= @townhouse.emergency %></p>
+      <p> Comments: <%= @townhouse.comment %></p>
       <p><%= @townhouse.user.email %></p>
       <%= link_to 'Edit Information', edit_owner_townhouse_path(@townhouse), class: 'btn btn-info' %>
       <%= link_to 'Finished', townhouses_path, class: 'btn btn-info' %>
