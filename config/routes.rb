@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#index' 
-  resources :townhouses, only: [:index, :show] 
+  resources :townhouses, only: [:index, :show, :edit, :update] 
   namespace :owner do
-    resources :townhouses, only: [:new, :create, :show, :edit, :update]
+    resources :townhouses, only: [:new, :create, :show, :edit, :update, :show, :destroy] do
+      resources :tenants, only: [:new, :create]
+    end
   end
 end

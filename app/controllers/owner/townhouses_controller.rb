@@ -1,5 +1,5 @@
 class Owner::TownhousesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :show]
 
   def new
     @townhouse = Townhouse.new
@@ -7,11 +7,7 @@ class Owner::TownhousesController < ApplicationController
 
   def create
     @townhouse = current_user.townhouses.create(townhouse_params)
-    if @townhouse.valid?
-      redirect_to owner_townhouse_path(@townhouse)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    redirect_to root_path
   end
 
   def show
@@ -20,12 +16,19 @@ class Owner::TownhousesController < ApplicationController
 
   def edit
     @townhouse = Townhouse.find(params[:id])
+    redirect_to root_path
   end
 
   def update
     @townhouse = Townhouse.find(params[:id])
     @townhouse.update_attributes(townhouse_params)
-    redirect_to owner_townhouse_path(@townhouse)
+    redirect_to root_path
+  end
+
+  def destroy
+    @townhouse = Townhouse.find(params[:id])
+    @townhouse.destroy
+    redirect_to root_path
   end
 
   private

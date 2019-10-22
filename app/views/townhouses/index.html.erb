@@ -1,4 +1,5 @@
 <hr>
+<p><%= link_to 'Register Property', new_owner_townhouse_path %></p>
 
 <div class="booyah-box-1 col-10 offset-1">
   <p class="title">
@@ -12,6 +13,12 @@
     <% if @townhouse.present? %>
       <p class="dir">
         <%= townhouse.name %>
+        <% if current_user.email == townhouse.primaryemail %>
+          <%= link_to 'View Details', owner_townhouse_path(townhouse), class: 'btn btn-info' %>
+        <% end %>
+      </p>
+      <p>
+        email:  <%= townhouse.primaryemail %>
       </p>
       <p class="dir2"> Address: 
         <%= townhouse.address %>
