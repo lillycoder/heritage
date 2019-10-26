@@ -5,7 +5,8 @@
 </div>
 <script type="text/javascript">
   $(function(){
-    $.get("http://api.openweathermap.org/data/2.5/weather?zip=22180&units=imperial&appid=a22802d5d0a8934766ff17043be2734f", function( data ) {
+    $.get("https://api.openweathermap.org/data/2.5/weather?zip=44720&appid=14ba1e61c196464337b5c7308123133f", function( data ) {
+      console.log(data);
       var temp = data.main.temp;
       var description = data.weather[0].description;
       var pelement = $('p.OPW');
