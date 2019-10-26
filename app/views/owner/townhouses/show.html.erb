@@ -7,6 +7,8 @@
       <% @townhouse.tenants.each do |tenant| %>
         <li>
           <p>Current Tenant: <%= tenant.name %></p>
+          <li>
+            <%= link_to 'Update', owner_townhouse_tenant_path(@townhouse), class: 'btn btn-info btn-sm' %>
         </li>
       <% end %>
     <% end %>

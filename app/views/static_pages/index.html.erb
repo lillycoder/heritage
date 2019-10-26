@@ -1,12 +1,27 @@
+<div>
+  <p class="OPW col-10 offset-1">
+    Weather for Vienna is currently unavailable
+  </p>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $.get("http://api.openweathermap.org/data/2.5/weather?zip=22180&units=imperial&appid=a22802d5d0a8934766ff17043be2734f", function( data ) {
+      var temp = data.main.temp;
+      var description = data.weather[0].description;
+      var pelement = $('p.OPW');
+      pelement.html("The weather in Vienna right now is " + temp + "F with " + description + ".");
+    });
+  });
+</script>
 <div class="hero">
   <br />
   <div class = "frosty col-10 offset-1">
-    <%= link_to 'Owners - portal', townhouses_path, class: 'btn btn-info' %>
+    <br />
+    <%= link_to 'Owners Portal', townhouses_path, class: 'btn btn-info btn-lg' %>
+    <br />
+    <br />
   </div>
   <br />
-  <div class = "frosty col-10 offset-1">
-    <%= link_to 'Tenants - portal', '#', class: 'btn btn-info' %>
-  </div>
 </div>
 
 <br />
@@ -19,6 +34,7 @@
     <h3>Link to Town of Vienna</h3>
   </div>
 </div>
+
 
 
 

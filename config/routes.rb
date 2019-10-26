@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :townhouses, only: [:index, :show, :edit, :update] 
   namespace :owner do
     resources :townhouses, only: [:new, :create, :show, :edit, :update, :show, :destroy] do
-      resources :tenants, only: [:new, :create]
+      resources :tenants, only: [:new, :create, :show, :update]
     end
   end
 end
