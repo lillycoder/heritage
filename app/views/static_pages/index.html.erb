@@ -41,10 +41,10 @@
 <hr>
 
 <%= link_to 'Please Provide Feedback and Suggestions to Make this site better', new_feedback_path %>
-<p>Example of feedback:</p>
+<p>Example of feedback:
 <% if @feedback.present? %>
   <%= @feedback.message %>
 <% else %>
-  <p>There are no examples at this time</p>
-<% end %>
+  There are no examples at this time
+<% end %></p>
 <hr>
