@@ -42,5 +42,7 @@
 
 <%= link_to 'Please Provide Feedback and Suggestions to Make this site better', new_feedback_path %>
 <p>Example of feedback:</p>
-<%= @feedback.message %>
+<% if @feedback.present? %>
+  <%= @feedback.message %>
+<% end %>
 <hr>
