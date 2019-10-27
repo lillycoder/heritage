@@ -19,7 +19,7 @@
   <br />
   <div class = "frosty col-10 offset-1">
     <br />
-    <%= link_to 'Owners Portal', townhouses_path, class: 'btn btn-info btn-lg' %>
+    <%= link_to 'Restricted to Owners', townhouses_path, class: 'btn btn-info btn-lg' %>
     <br />
     <br />
   </div>
@@ -37,8 +37,10 @@
     <% end %>
   </div>
 </div>
+<br />
+<hr>
 
-
-
-
-
+<%= link_to 'Please Provide Feedback and Suggestions to Make this site better', new_feedback_path %>
+<p>Example of feedback:</p>
+<%= @feedback.message %>
+<hr>

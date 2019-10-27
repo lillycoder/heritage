@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :townhouses
   has_many :grams
+  has_many :feedbacks
 end

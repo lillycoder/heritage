@@ -1,5 +1,5 @@
 class GramsController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @gram = Gram.last
   end
@@ -14,7 +14,7 @@ class GramsController < ApplicationController
   end
 
   def show
-    @gram = Gram.last
+    
   end
 
   private
