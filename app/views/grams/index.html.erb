@@ -1,0 +1,13 @@
+<h1>hello</h1>
+<div class="row feature text-center">
+  <div class="col-12 col-sm">
+    <h3>Announcements</h3>
+    <% if @gram.present? %>
+      <p> there is an announcement </p>
+        <%= @gram.announcement %>
+          <% if @gram.announcement == "Nil" %>
+            <p>The announcements is Nil at this time </p>
+          <% end %>
+    <% end %>
+  </div>
+</div>

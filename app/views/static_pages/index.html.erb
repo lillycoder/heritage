@@ -5,12 +5,13 @@
 </div>
 <script type="text/javascript">
   $(function(){
-    $.get("https://api.openweathermap.org/data/2.5/weather?zip=22180&appid=14ba1e61c196464337b5c7308123133f", function( data ) {
+    $.get("https://api.openweathermap.org/data/2.5/weather?zip=22180&units=imperial&appid=14ba1e61c196464337b5c7308123133f", function( data ) {
       console.log(data);
       var temp = data.main.temp;
+      var humidity = data.main.humidity;
       var description = data.weather[0].description;
       var pelement = $('p.OPW');
-      pelement.html("The weather in Vienna right now is " + temp + "F with " + description + ".");
+      pelement.html("Currently the weather in Vienna VA is " + temp + "F with " + description + " and a " + humidity + "% humidity.");
     });
   });
 </script>
@@ -29,10 +30,11 @@
 <div class="row feature text-center">
   <div class="col-12 col-sm">
     <h3>Announcements</h3>
-  </div>
-
-  <div class="col-12 col-sm">
-    <h3>Link to Town of Vienna</h3>
+    <% if @gram.present? %>
+      <p><%= @gram.announcement %></p>
+    <% else %>
+      <p>There are no announcements at this time</p>
+    <% end %>
   </div>
 </div>
 
